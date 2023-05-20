@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css"/>
+  <script id="taskItem" type="text/template">
+    <li class="m-2 card " id="{{id}}">
+      <div class="card-body bg-light">
+        <div class="px-0">
+          <div class="row">
+            <div class="col">
+              <h3 class="d-inline">{{title}}</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h6 >{{formattedDate}}</h6>
+              <h6><b>Assigned to:</b> {{assignedTo}}</h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p class="notes">{{desc}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <form class="text-right">
+                <button type="button" class="btn btn-sm btn-success">
+                  Done
+                </button>
+                <button type="button" class="btn btn-sm btn-danger">
+                  Delete
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </script>
+  <title>todo list</title>
+</head>
+
+<body>
+
+
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+   
+  <section id="header content" class="w-100 m-auto text-left pt-5 pl-5 text-dark">
+    <h1> Task Manager</h1>
+  </section>
+  
+  <section class="tasklist">
+    <!-- Tasks Heading -->
+    <h2 class="p-0 my-5"></h2>
+    <span class="d-flex flex-row text-dark w-75">
+      <ul class="list-group d-flex flex-column flex-even ">
+        <li class="card m-2 utilCard" id="newTaskButton">
+          <div class="card-body d-flex justify-content-center animateHeight" id="button">
+            <h1 class="align-self-center display-1">+</h1>
+          </div>
+          <form class="card-body hiddenCont" id="form">
+            <div class="px-0">
+              <div class="row">
+                <div class="col p-2">
+                  <!--Title-->
+                  <input key="title" class="d-inline" placeholder="Title" required></input>
+                
+                </div>
+              </div>
+              <div class="row">
+                <div class="col p-2">
+                  <!--Assignedto-->
+                  <input key="date" type="date" required></input><br>
+                  <input key="assignedTo" placeholder="assigned to" required></input>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col p-2">
+                  <textarea key="desc" placeholder="Notes." required></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <form class="text-right p-2">
+                    <button type="submit" class="btn btn-sm btn-success" id="addTaskBtn">
+                      Done
+                    </button>
+                    <button type="button" class="btn btn-sm btn-danger">
+                      Cancel
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </form>
+        </li> 
+      </ul>
+      <ul class="list-group d-flex flex-column flex-even ">
+
+      </ul>
+      <ul class="list-group d-flex flex-column flex-even ">
+
+      </ul>
+    </span>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <script src="./assets/js/library.js"></script>
+  <script src="./assets/js/Task.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
